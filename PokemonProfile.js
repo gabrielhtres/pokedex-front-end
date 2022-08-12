@@ -1,18 +1,14 @@
 import { Styles } from "./styles";
 import React, { useState, setState } from 'react';
 import { View, Text, Image, ScrollView, TextInput, Button } from 'react-native';
+import { navigation } from "./App";
 
 const PokemonProfile = (props) => {
     const [pokemon, setPokemon] = useState(["Bulbassauro", "Charmander"]);
     console.log(pokemon)
 
     function mudarPokemons() {
-        console.log(pokemon)
-        if(pokemon[0] == "Bulbassauro") {
-            setPokemon(["Squirtle"]);
-        } else {
-            setPokemon(["Bulbassauro", "Charmander"]);
-        }
+        console.log("Mudou")
     }
 
     return(
