@@ -3,7 +3,8 @@ import React, { useState, setState } from 'react';
 import { View, Text, Image, ScrollView, TextInput, Button } from 'react-native';
 import { navigation } from "./App";
 import { useNavigation, Link } from "@react-navigation/native";
-import { Badge } from "native-base";
+import Grass from './assets/badges/grass.svg'
+// import { Badge } from "native-base";
 
 const PokemonProfile = (props) => {
     const [pokemon, setPokemon] = useState(["Bulbassauro", "Charmander"]);
@@ -26,24 +27,38 @@ const PokemonProfile = (props) => {
                 <View style={{  // Parte do Pokémon com imagem e detalhes
                     height: "80%",
                     // backgroundColor: "red",
-                    justifyContent: "center",
+                    justifyContent: "space-evenly",
                     flexDirection: "row",
-                    alignItems: "center"
+                    alignItems: "center",
+                    
                  }}>    
                     <Image
                         source={{ uri: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" }}
-                        style={{ width: "100px", height: "100px", flexShrink: "50%", paddingRight: "5%" }}
+                style={{ width: "100px", height: "100px", flexShrink: "50%"/*, paddingRight: "5%"*/ }}
                     />
-                    <View style={{
-                        marginLeft: "5%"
+                    <View style={{ // Caixa dos detalhes do Pokémon
+                        /*marginLeft: "5%"*/flexShrink: "50%"
                     }}>
-                        <Text>#001</Text>
-                        <Text>Bulbassauro</Text>
+                        <Text style={{ marginBottom: "2px" }}>#001</Text>
+                        <Text style={{ marginBottom: "2px" }}>Bulbassauro</Text>
                         {/* <Badge>
                             Grass
                         </Badge> */}
-                        <Text>Grass</Text>
-                        <Text>Poison</Text>
+                        {/* <Text>Grass</Text> */}
+                        {/* <Text>Poison</Text> */}
+                        <View style={{
+                            width: "100%",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            flexWrap: "wrap"
+                        }}>
+                            <Image source={Grass}
+                                style={{ width: "70px", height: "25px", marginRight: "2px" }}
+                            />
+                            <Image source={require('./assets/badges/poison.svg')}
+                                style={{ width: "70px", height: "25px" }}
+                            />
+                        </View>
                     </View>
                 </View>
                 <View style={{ // Parte dos botões
