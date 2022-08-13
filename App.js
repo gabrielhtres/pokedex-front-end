@@ -13,7 +13,11 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false
+        }}
+      >
         <Stack.Screen
           name="Home"
           component={Home}
@@ -22,7 +26,7 @@ export default function App() {
         <Stack.Screen
           name="PokemonProfile"
           component={PokemonProfile}
-          options={{ title: 'Welcome' }}
+          options={{ title: 'PokemonProfile' }}
         />
         {/* https://reactnavigation.org/docs/use-navigation - Documentação navigation */}
       </Stack.Navigator>
